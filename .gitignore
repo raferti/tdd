@@ -1,5 +1,6 @@
 *.sqlite3
 geckondriver.log
+geckodriver.log
 __pycache__/
 *.pyc
 .idea
