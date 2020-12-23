@@ -1,0 +1,8 @@
+*.sqlite3
+geckondriver.log
+__pycache__/
+*.pyc
+.idea
+idea
+venv
+migrations/
