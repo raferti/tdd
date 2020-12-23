@@ -3,11 +3,10 @@ from django.urls import resolve
 from lists.views import home_page
 
 
-class SmokeTest(TestCase):
+class HomePageTest(TestCase):
     """Тест домашней страницы"""
 
-    def test_root_url_resolves_to_home_page(self):
-        """Тест корневой url преобразуется в представления"""
+    def test_root_url_resolves_to_home_page_view(self):
         found = resolve('/')
         self.assertEqual(found.func, home_page)
 
