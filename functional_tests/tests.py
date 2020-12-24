@@ -58,10 +58,11 @@ class NewVisitorTest(LiveServerTestCase):
         self.wait_for_row_in_list_table('1: Купить павлиньи перья')
         self.wait_for_row_in_list_table('2: Сделать мушку из павлиньих перьев')
 
-        self.fail('закончить тест')
+        #self.fail('закончить тест')
 
     def test_multiple_users_can_start_lists_at_different_urls(self):
         """Многие пользователи могут начать списки по разным url"""
+
         self.browser.get(self.live_server_url)
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('Купить павлиньи перья')
@@ -89,5 +90,5 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertNotEqual(francis_list_url, edith_list_url)
 
         page_text = self.browser.find_element_by_tag_name('body').text
-        self.assertIn('Купить павлиньи перья', page_text)
+        self.assertNotIn('Купить павлиньи перья', page_text)
         self.assertIn('Купить молоко', page_text)
